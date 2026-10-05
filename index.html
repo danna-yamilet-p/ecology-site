@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOGUÍA - Recolección y Separación Correcta de Residuos</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --accent-green: #81c784;
+            --bg-light: #f4f8f5;
+            --surface: #ffffff;
+            --text-main: #1a2e1e;
+            --text-muted: #526355;
+            
+            /* Bin Theme Colors */
+            --organic-color: #5d4037;
+            --organic-bg: #efebe9;
+            --plastic-color: #f57f17;
+            --plastic-bg: #fffde7;
+            --paper-color: #1565c0;
+            --paper-bg: #e3f2fd;
+            --glass-color: #2e7d32;
+            --glass-bg: #e8f5e9;
+            --hazard-color: #c62828;
+            --hazard-bg: #ffebee;
+
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 15px -3px rgba(46, 125, 50, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Layout Container */
+        .container {
+            width: 90%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+        }
+
+        .btn-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-nav::after { display: none; }
+
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 90px;
+            position: relative;
+            background: radial-gradient(circle at 10% 20%, rgba(129, 199, 132, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(76, 175, 80, 0.12) 0%, transparent 40%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(76, 175, 80, 0.12);
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.4rem;
+            line-height: 1.15;
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+        }
+
+        .hero-title span {
+            color: var(--primary-light);
+            background: linear-gradient(120deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-main:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--surface);
+            color: var(--text-main);
+            padding: 0.9rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card-stack {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            height: 400px;
+        }
+
+        .hero-float-card {
+            position: absolute;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-float-card:nth-child(1) {
+            top: 10%;
+            left: 0;
+            width: 280px;
+            z-index: 3;
+        }
+
+        .hero-float-card:nth-child(2) {
+            bottom: 12%;
+            right: 0;
+            width: 300px;
+            animation-delay: -3s;
+            z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Route & Schedule Interactive Widget */
+        .schedule-box {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 2.5rem;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .route-picker {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .route-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #e0e6e1;
+            background: transparent;
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .route-btn.active, .route-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .day-card {
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .day-card.active-day {
+            background: #ffffff;
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .day-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        .day-type {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .type-org { background: var(--organic-bg); color: var(--organic-color); }
+        .type-rec { background: var(--paper-bg); color: var(--paper-color); }
+        .type-rest { background: #f5f5f5; color: #616161; }
+
+        .schedule-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eef2ef;
+        }
+
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .tip-icon {
+            font-size: 1.5rem;
+            background: var(--glass-bg);
+            padding: 0.6rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .filter-wrapper {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.1rem 1.5rem 1.1rem 3.2rem;
+            border-radius: 40px;
+            border: 2px solid #e0e6e1;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            background: var(--surface);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .bins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .bin-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bin-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .bin-header {
+            padding: 1.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bin-header.organic { background: var(--organic-color); }
+        .bin-header.plastic { background: var(--plastic-color); }
+        .bin-header.paper { background: var(--paper-color); }
+        .bin-header.glass { background: var(--glass-color); }
+        .bin-header.hazard { background: var(--hazard-color); }
+
+        .bin-title-group h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .bin-title-group span {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .bin-badge-icon {
+            font-size: 2.2rem;
+        }
+
+        .bin-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .item-tag {
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: var(--bg-light);
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .item-tag.highlight {
+            background: var(--primary-light);
+            color: white;
+            font-weight: 600;
+            transform: scale(1.05);
+        }
+
+        .bin-no-no {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #e0e0e0;
+            font-size: 0.85rem;
+            color: var(--hazard-color);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            font-family: 'Poppins', sans-serif;
+            color: #a5d6a7;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .quiz-card {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            max-width: 750px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .quiz-progress {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 33.3%;
+            transition: var(--transition);
+        }
+
+        .quiz-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .quiz-opt-btn {
+            padding: 1rem 1.2rem;
+            border: 2px solid #e0e6e1;
+            border-radius: var(--radius-md);
+            background: white;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .quiz-opt-btn:hover {
+            border-color: var(--primary-light);
+            background: var(--glass-bg);
+        }
+
+        .quiz-opt-btn.correct {
+            border-color: var(--primary);
+            background: #e8f5e9;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .quiz-opt-btn.wrong {
+            border-color: var(--hazard-color);
+            background: var(--hazard-bg);
+            color: var(--hazard-color);
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+
+        .quiz-nav-btn {
+            margin-top: 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            float: right;
+            display: none;
+        }
+
+        footer {
+            background: #112214;
+            color: #d1e0d3;
+            padding: 5rem 0 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            color: #94a897;
+            font-size: 0.95rem;
+            max-width: 320px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-links a {
+            color: #94a897;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #728775;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-title { font-size: 2.6rem; }
+            .hero-subtitle { margin: 0 auto 2rem auto; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 680px) {
+            header { width: 95%; padding: 0.8rem 1.2rem; }
+            nav ul { display: none; } /* Simplified mobile nav */
+            .hero-title { font-size: 2.1rem; }
+            .section-title { font-size: 1.8rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .schedule-box { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">🌱</div>
+                <span>ECOGUÍA</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#rutas">Rutas y Horarios</a></li>
+                    <li><a href="#separacion">Guía de Separación</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#trivia" class="btn-nav">Test de Separación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-tag">✨ Por un planeta más limpio y verde</div>
+                    <h1 class="hero-title">Separa hoy, <span>transforma</span> el mañana.</h1>
+                    <p class="hero-subtitle">Aprende a clasificar tus residuos correctamente, conoce los días de recolección en tu zona y reduce tu huella ecológica con nuestra guía interactiva.</p>
+                    <div class="hero-actions">
+                        <a href="#separacion" class="btn-main">Aprender a Separar ♻️</a>
+                        <a href="#rutas" class="btn-secondary">Ver Horarios 📅</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card-stack">
+                        <div class="hero-float-card">
+                            <div class="card-icon" style="background: var(--organic-bg); color: var(--organic-color);">🍎</div>
+                            <h4>Residuos Orgánicos</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Compostables y biodegradables para fertilizar la tierra.</p>
+                        </div>
+                        <div class="hero-float-card">
+                            <div class="card-icon" style="background: var(--paper-bg); color: var(--paper-color);">📦</div>
+                            <h4>Papel y Cartón</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Reciclable hasta 7 veces si se mantiene limpio y seco.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rutas" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Planificación Comunitaria</span>
+                <h2 class="section-title">Rutas y Días de Recolección</h2>
+                <p class="section-desc">Selecciona tu zona o sector para consultar el calendario de camiones recolectores y no sacar la basura a deshoras.</p>
+            </div>
+
+            <div class="schedule-box">
+                <div class="route-picker">
+                    <button class="route-btn active" onclick="setZone('centro')">📍 Zona Centro / Residencial</button>
+                    <button class="route-btn" onclick="setZone('norte')">📍 Zona Norte / Comercial</button>
+                    <button class="route-btn" onclick="setZone('sur')">📍 Zona Sur / Industrial</button>
+                </div>
+
+                <div class="days-grid" id="daysGrid">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+
+                <div class="schedule-tips">
+                    <div class="tip-item">
+                        <div class="tip-icon">⏰</div>
+                        <div>
+                            <strong>Horario sugerido</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Saca tus bolsas entre 30 y 60 minutos antes de la ruta habitual.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-icon">🐈</div>
+                        <div>
+                            <strong>Evita la fauna nociva</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Mantén tus botes bien cerrados para evitar que los animales rompan bolsas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="separacion" class="section-padding" style="background: #eef5f0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Guía de Separación</span>
+                <h2 class="section-title">¿Dónde tiro cada residuo?</h2>
+                <p class="section-desc">Busca cualquier objeto en nuestro filtro inteligente para saber exactamente en qué contenedor depositarlo.</p>
+            </div>
+
+            <div class="filter-wrapper">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Ej. cáscara de plátano, pilas, botella PET, medicamentos..." oninput="filterWasteItems()">
+                </div>
+            </div>
+
+            <div class="bins-grid" id="binsGrid">
+                <!-- Orgánico -->
+                <div class="bin-card" data-items="cascara de platano fruta comida restaje hojas flores cafe te cascara de huevo">
+                    <div class="bin-header organic">
+                        <div class="bin-title-group">
+                            <h3>Orgánicos</h3>
+                            <span>Contenedor Marrón / Verde</span>
+                        </div>
+                        <div class="bin-badge-icon">🍂</div>
+                    </div>
+                    <div class="bin-body">
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Residuos de origen biológico que se descomponen naturalmente.</p>
+                        <div class="item-tag-list">
+                            <span class="item-tag">Cáscaras de fruta</span>
+                            <span class="item-tag">Restos de comida</span>
+                            <span class="item-tag">Café y té</span>
+                            <span class="item-tag">Hojas secas</span>
+                            <span class="item-tag">Cáscara de huevo</span>
+                        </div>
+                        <div class="bin-no-no">⚠️ No tirar: Plásticos, pañales, huesos grandes.</div>
+                    </div>
+                </div>
+
+                <!-- Envases / Plásticos -->
+                <div class="bin-card" data-items="botella pet plastico lata aluminio lata conserva tetra pak bolsa de plastico tapon">
+                    <div class="bin-header plastic">
+                        <div class="bin-title-group">
+                            <h3>Envases y Plásticos</h3>
+                            <span>Contenedor Amarillo</span>
+                        </div>
+                        <div class="bin-badge-icon">🥤</div>
+                    </div>
+                    <div class="bin-body">
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Envases ligeros de plástico, metal y briks de bebidas.</p>
+                        <div class="item-tag-list">
+                            <span class="item-tag">Botellas PET</span>
+                            <span class="item-tag">Latas de aluminio</span>
+                            <span class="item-tag">Bolsas de plástico</span>
+                            <span class="item-tag">Cartones de leche (Briks)</span>
+                            <span class="item-tag">Tapas metálicas</span>
+                        </div>
+                        <div class="bin-no-no">⚠️ No tirar: Juguetes de plástico, biberones, CD/DVD.</div>
+                    </div>
+                </div>
+
+                <!-- Papel y Cartón -->
+                <div class="bin-card" data-items="caja de carton papel periodico revista folleto cuaderno caja de cereal">
+                    <div class="bin-header paper">
+                        <div class="bin-title-group">
+                            <h3>Papel y Cartón</h3>
+                            <span>Contenedor Azul</span>
+                        </div>
+                        <div class="bin-badge-icon">📄</div>
+                    </div>
+                    <div class="bin-body">
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Materiales celulósicos limpios y secos (deben doblarse).</p>
+                        <div class="item-tag-list">
+                            <span class="item-tag">Cajas de cartón</span>
+                            <span class="item-tag">Periódicos</span>
+                            <span class="item-tag">Revistas y folletos</span>
+                            <span class="item-tag">Hojas de papel</span>
+                            <span class="item-tag">Cajas de cereal</span>
+                        </div>
+                        <div class="bin-no-no">⚠️ No tirar: Servilletas sucias, cartón con grasa de pizza.</div>
+                    </div>
+                </div>
+
+                <!-- Vidrio -->
+                <div class="bin-card" data-items="botella de vidrio frasco de mermelada frasco de perfume tarro de cristal">
+                    <div class="bin-header glass">
+                        <div class="bin-title-group">
+                            <h3>Vidrio</h3>
+                            <span>Contenedor Verde</span>
+                        </div>
+                        <div class="bin-badge-icon">🍾</div>
+                    </div>
+                    <div class="bin-body">
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Envases de cristal sin tapas ni tapones metálicos/de corcho.</p>
+                        <div class="item-tag-list">
+                            <span class="item-tag">Botellas de vidrio</span>
+                            <span class="item-tag">Frascos de conservación</span>
+                            <span class="item-tag">Tarros de perfume</span>
+                        </div>
+                        <div class="bin-no-no">⚠️ No tirar: Espejos, focos, cristales rotos de ventana, cerámica.</div>
+                    </div>
+                </div>
+
+                <!-- Residuos Peligrosos -->
+                <div class="bin-card" data-items="pilas baterias medicamentos focos aceite usado pintura electrodomesticos aparatos">
+                    <div class="bin-header hazard">
+                        <div class="bin-title-group">
+                            <h3>Especiales / Peligrosos</h3>
+                            <span>Punto Limpio / Rojo</span>
+                        </div>
+                        <div class="bin-badge-icon">🔋</div>
+                    </div>
+                    <div class="bin-body">
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Tóxicos o altamente contaminantes que requieren manejo especial.</p>
+                        <div class="item-tag-list">
+                            <span class="item-tag">Pilas y baterías</span>
+                            <span class="item-tag">Medicamentos caducados</span>
+                            <span class="item-tag">Focos ahorradores/LED</span>
+                            <span class="item-tag">Aceite de cocina usado</span>
+                        </div>
+                        <div class="bin-no-no">⛔ ¡Nunca tirar al contenedor de basura común!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impacto" class="container">
+        <div class="impact-section">
+            <div class="section-header" style="margin-bottom: 2.5rem;">
+                <span class="section-subtitle" style="color: #a5d6a7;">Tu Acción Cuenta</span>
+                <h2 class="section-title" style="color: white;">Impacto Directo del Reciclaje</h2>
+            </div>
+            <div class="impact-grid">
+                <div>
+                    <div class="stat-number" id="count1">0</div>
+                    <div class="stat-label">Litros de agua ahorrados por tonelada de papel reciclado</div>
+                </div>
+                <div>
+                    <div class="stat-number" id="count2">0</div>
+                    <div class="stat-label">Horas de energía que ahorra reciclar 1 sola botella PET</div>
+                </div>
+                <div>
+                    <div class="stat-number" id="count3">0</div>
+                    <div class="stat-label">% de Reducción en emisiones de gases de efecto invernadero</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trivia" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Evaluación de Conocimientos</span>
+                <h2 class="section-title">Trivia Rápida de Separación</h2>
+                <p class="section-desc">¿Qué tan bien clasificas tus residuos? Pon a prueba tus hábitos ecológicos en 3 preguntas rápidas.</p>
+            </div>
+
+            <div class="quiz-card">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="quizProgressBar"></div>
+                </div>
+
+                <div id="quizContent">
+                    <!-- Dynamic rendering via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: white;">
+                        <div class="logo-icon">🌱</div>
+                        <span>ECOGUÍA</span>
+                    </a>
+                    <p>Fomentando comunidades sostenibles mediante la educación en el manejo y reciclaje responsable de residuos urbanos.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Secciones</h4>
+                    <ul class="footer-links">
+                        <li><a href="#rutas">Rutas de Recolección</a></li>
+                        <li><a href="#separacion">Guía de Separación</a></li>
+                        <li><a href="#impacto">Impacto Ecológico</a></li>
+                        <li><a href="#trivia">Trivia Interactiva</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Categorías</h4>
+                    <ul class="footer-links">
+                        <li><a href="#separacion">Orgánicos</a></li>
+                        <li><a href="#separacion">Envases y Plásticos</a></li>
+                        <li><a href="#separacion">Papel y Cartón</a></li>
+                        <li><a href="#separacion">Puntos Limpios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Compromiso Verde</h4>
+                    <p style="font-size: 0.9rem; color: #94a897;">"No heredamos la Tierra de nuestros antepasados, la tomamos prestada de nuestros hijos."</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ECOGUÍA. Desarrollado para un futuro limpio y sostenible.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. Collection Routes & Schedule Data ---
+        const zoneData = {
+            centro: [
+                { day: "Lunes", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Martes", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Miércoles", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Jueves", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Viernes", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Sábado", type: "Resto / General 🗑️", class: "type-rest" },
+                { day: "Domingo", type: "Sin servicio ❌", class: "type-rest" }
+            ],
+            norte: [
+                { day: "Lunes", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Martes", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Miércoles", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Jueves", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Viernes", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Sábado", type: "Resto / General 🗑️", class: "type-rest" },
+                { day: "Domingo", type: "Sin servicio ❌", class: "type-rest" }
+            ],
+            sur: [
+                { day: "Lunes", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Martes", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Miércoles", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Jueves", type: "Orgánicos 🍎", class: "type-org" },
+                { day: "Viernes", type: "Reciclables 🥤", class: "type-rec" },
+                { day: "Sábado", type: "Especiales 🔋", class: "type-rec" },
+                { day: "Domingo", type: "Sin servicio ❌", class: "type-rest" }
+            ]
+        };
+
+        function setZone(zone) {
+            document.querySelectorAll('.route-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const grid = document.getElementById('daysGrid');
+            grid.innerHTML = '';
+
+            zoneData[zone].forEach(item => {
+                const dayCard = document.createElement('div');
+                dayCard.className = 'day-card';
+                dayCard.innerHTML = `
+                    <div class="day-name">${item.day}</div>
+                    <span class="day-type ${item.class}">${item.type}</span>
+                `;
+                grid.appendChild(dayCard);
+            });
+        }
+
+        // Initialize default zone
+        setZone('centro');
+
+        // --- 2. Live Waste Item Search Filter ---
+        function filterWasteItems() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.bin-card');
+
+            cards.forEach(card => {
+                const itemsData = card.getAttribute('data-items');
+                const tags = card.querySelectorAll('.item-tag');
+                let matchFound = false;
+
+                if (query === '') {
+                    card.style.display = 'flex';
+                    tags.forEach(tag => tag.classList.remove('highlight'));
+                    return;
+                }
+
+                tags.forEach(tag => {
+                    const tagText = tag.textContent.toLowerCase();
+                    if (tagText.includes(query)) {
+                        tag.classList.add('highlight');
+                        matchFound = true;
+                    } else {
+                        tag.classList.remove('highlight');
+                    }
+                });
+
+                if (matchFound || itemsData.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- 3. Impact Counters Animation ---
+        function animateCounters() {
+            const targets = [
+                { id: 'count1', target: 26000 },
+                { id: 'count2', target: 3 },
+                { id: 'count3', target: 70 }
+            ];
+
+            targets.forEach(item => {
+                const el = document.getElementById(item.id);
+                let current = 0;
+                const increment = Math.ceil(item.target / 50);
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= item.target) {
+                        current = item.target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = current.toLocaleString() + (item.id === 'count3' ? '%' : '');
+                }, 30);
+            });
+        }
+
+        // Trigger animation on scroll to section
+        let animated = false;
+        window.addEventListener('scroll', () => {
+            const impactSec = document.getElementById('impacto');
+            if (!impactSec) return;
+            const pos = impactSec.getBoundingClientRect().top;
+            if (pos < window.innerHeight - 100 && !animated) {
+                animateCounters();
+                animated = true;
+            }
+        });
+
+        // --- 4. Interactive Trivia Quiz System ---
+        const quizQuestions = [
+            {
+                question: "¿En qué contenedor debes tirar una caja de pizza de cartón que tiene grasa y queso pegado?",
+                options: [
+                    "Contenedor Azul (Papel y Cartón)",
+                    "Contenedor Marrón (Orgánico / Resto)",
+                    "Contenedor Amarillo (Envases)",
+                    "Punto Limpio"
+                ],
+                correct: 1,
+                explanation: "¡Correcto! El cartón manchado de grasa no se puede reciclar con el papel limpio, debe ir al residuo orgánico o resto."
+            },
+            {
+                question: "¿Dónde se deben depositar los medicamentos caducados y sus envases?",
+                options: [
+                    "En el contenedor de plásticos",
+                    "Por el drenaje o lavabo",
+                    "En el Punto SIGRE / Farmacia o residuo especial",
+                    "En el contenedor orgánico"
+                ],
+                correct: 2,
+                explanation: "¡Exacto! Los medicamentos jamás deben tirarse a la basura común ni al drenaje para evitar la contaminación de fuentes de agua."
+            },
+            {
+                question: "¿Qué se debe hacer con las botellas de plástico (PET) antes de tirarlas al contenedor amarillo?",
+                options: [
+                    "Llenarlas de agua",
+                    "Enjuagarlas, vaciarlas y aplastarlas para reducir volumen",
+                    "Romperlas en pedazos pequeños con tijeras",
+                    "Quitarles la etiqueta y quemarla"
+                ],
+                correct: 1,
+                explanation: "¡Muy bien! Aplastar las botellas ahorra hasta un 70% de espacio en los contenedores y camiones recolectores."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let userScore = 0;
+
+        function renderQuestion() {
+            const container = document.getElementById('quizContent');
+            const progress = document.getElementById('quizProgressBar');
+            const q = quizQuestions[currentQuizIndex];
+
+            progress.style.width = `${((currentQuizIndex + 1) / quizQuestions.length) * 100}%`;
+
+            container.innerHTML = `
+                <div class="quiz-question">${currentQuizIndex + 1}. ${q.question}</div>
+                <div class="quiz-options">
+                    ${q.options.map((opt, i) => `
+                        <button class="quiz-opt-btn" onclick="checkAnswer(${i})">
+                            <span>${opt}</span>
+                            <span class="opt-icon"></span>
+                        </button>
+                    `).join('')}
+                </div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <button class="quiz-nav-btn" id="nextBtn" onclick="nextQuestion()">Siguiente Pregunta ➡️</button>
+            `;
+        }
+
+        function checkAnswer(selectedIndex) {
+            const q = quizQuestions[currentQuizIndex];
+            const buttons = document.querySelectorAll('.quiz-opt-btn');
+            const feedback = document.getElementById('quizFeedback');
+            const nextBtn = document.getElementById('nextBtn');
+
+            buttons.forEach(btn => btn.style.pointerEvents = 'none');
+
+            if (selectedIndex === q.correct) {
+                buttons[selectedIndex].classList.add('correct');
+                feedback.className = "quiz-feedback show";
+                feedback.style.background = "#e8f5e9";
+                feedback.style.color = "var(--primary-dark)";
+                feedback.innerHTML = `✅ ${q.explanation}`;
+                userScore++;
+            } else {
+                buttons[selectedIndex].classList.add('wrong');
+                buttons[q.correct].classList.add('correct');
+                feedback.className = "quiz-feedback show";
+                feedback.style.background = "var(--hazard-bg)";
+                feedback.style.color = "var(--hazard-color)";
+                feedback.innerHTML = `❌ Incorrecto. ${q.explanation}`;
+            }
+
+            nextBtn.style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizQuestions.length) {
+                renderQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            const container = document.getElementById('quizContent');
+            const progress = document.getElementById('quizProgressBar');
+            progress.style.width = '100%';
+
+            container.innerHTML = `
+                <div style="text-align: center; padding: 1.5rem 0;">
+                    <div style="font-size: 3.5rem; margin-bottom: 0.8rem;">🎉</div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary-dark);">¡Test Completado!</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Obtuviste <strong>${userScore}</strong> de <strong>${quizQuestions.length}</strong> respuestas correctas.
+                    </p>
+                    <button class="btn-main" onclick="restartQuiz()" style="border:none; cursor:pointer;">Reiniciar Trivia 🔄</button>
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            userScore = 0;
+            renderQuestion();
+        }
+
+        // Initialize quiz on start
+        renderQuestion();
+    </script>
+</body>
+</html>
