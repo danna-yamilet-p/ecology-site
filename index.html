@@ -580,6 +580,233 @@
             gap: 0.4rem;
         }
 
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .combo-bin-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f7faf8 100%);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .combo-bin-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 8px;
+            background: var(--bin-accent, var(--primary));
+        }
+
+        .combo-bin-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-main);
+        }
+
+        .combo-bin-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--bin-accent, var(--primary));
+            margin-bottom: 0.8rem;
+        }
+
+        .combo-bin-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .combo-bin-card ul {
+            padding-left: 1.15rem;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .combo-bin-card li + li {
+            margin-top: 0.35rem;
+        }
+
+        .combo-bin-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: rgba(46, 125, 50, 0.08);
+            color: var(--bin-accent, var(--primary));
+            font-size: 1.6rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .steps-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .steps-list li {
+            position: relative;
+            background: var(--surface);
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: var(--radius-lg);
+            padding: 1.2rem 1.2rem 1.2rem 4.4rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .steps-list li::before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .steps-list ol,
+        .steps-list ul {
+            list-style: none;
+        }
+
+        .steps-list h3 {
+            margin-bottom: 0.3rem;
+            font-size: 1.15rem;
+        }
+
+        .steps-list p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .practice-box {
+            background: linear-gradient(180deg, #ffffff 0%, #f6faf7 100%);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .practice-score {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .practice-question {
+            font-size: clamp(1.4rem, 2vw, 1.9rem);
+            font-weight: 800;
+            margin: 0.5rem 0 1.2rem;
+            color: var(--text-main);
+        }
+
+        .practice-answers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .practice-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 18px rgba(46, 125, 50, 0.15);
+        }
+
+        .practice-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .practice-btn:disabled {
+            opacity: 0.88;
+            cursor: default;
+            transform: none;
+        }
+
+        .practice-result {
+            min-height: 3.4rem;
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+
+        .practice-result.ok {
+            color: var(--primary-dark);
+        }
+
+        .practice-result.bad {
+            color: var(--hazard-color);
+        }
+
+        .practice-next {
+            display: none;
+            margin-top: 1rem;
+            background: transparent;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .tips-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tips-list li {
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(236,246,238,0.95) 100%);
+            border: 1px solid rgba(46, 125, 50, 0.08);
+            border-top: 5px solid var(--primary);
+            border-radius: 0 0 18px 18px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tips-list strong {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-main);
+        }
+
+        .tips-list span {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+        }
+
         .impact-section {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             color: white;
@@ -794,7 +1021,8 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#rutas">Rutas y Horarios</a></li>
+                    <li><a href="#contenedores">Contenedores</a></li>
+                    <li><a href="#recoleccion">Recolección</a></li>
                     <li><a href="#separacion">Guía de Separación</a></li>
                     <li><a href="#impacto">Impacto</a></li>
                     <li><a href="#trivia" class="btn-nav">Test de Separación</a></li>
@@ -809,10 +1037,9 @@
                 <div class="hero-text">
                     <div class="hero-tag">✨ Por un planeta más limpio y verde</div>
                     <h1 class="hero-title">Separa hoy, <span>transforma</span> el mañana.</h1>
-                    <p class="hero-subtitle">Aprende a clasificar tus residuos correctamente, conoce los días de recolección en tu zona y reduce tu huella ecológica con nuestra guía interactiva.</p>
+                    <p class="hero-subtitle">Aprende a clasificar tus residuos correctamente, descubre los contenedores adecuados y reduce tu huella ecológica con nuestra guía interactiva.</p>
                     <div class="hero-actions">
                         <a href="#separacion" class="btn-main">Aprender a Separar ♻️</a>
-                        <a href="#rutas" class="btn-secondary">Ver Horarios 📅</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -833,42 +1060,155 @@
         </div>
     </section>
 
-    <section id="rutas" class="section-padding">
+    <section id="contenedores" class="section-padding">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Planificación Comunitaria</span>
-                <h2 class="section-title">Rutas y Días de Recolección</h2>
-                <p class="section-desc">Selecciona tu zona o sector para consultar el calendario de camiones recolectores y no sacar la basura a deshoras.</p>
+                <span class="section-subtitle">Clasificación</span>
+                <h2 class="section-title">Cinco tipos de residuos</h2>
+                <p class="section-desc">Cada color te indica el destino correcto. Si tienes dudas, revisa el empaque o consulta la normativa local.</p>
             </div>
 
-            <div class="schedule-box">
-                <div class="route-picker">
-                    <button class="route-btn active" onclick="setZone('centro')">📍 Zona Centro / Residencial</button>
-                    <button class="route-btn" onclick="setZone('norte')">📍 Zona Norte / Comercial</button>
-                    <button class="route-btn" onclick="setZone('sur')">📍 Zona Sur / Industrial</button>
-                </div>
+            <div class="combo-grid">
+                <article class="combo-bin-card" style="--bin-accent: var(--organic-color);">
+                    <div class="combo-bin-icon">🍂</div>
+                    <h3>Orgánicos</h3>
+                    <div class="combo-bin-tag">Contenedor verde</div>
+                    <p>Restos que se descomponen y pueden convertirse en composta.</p>
+                    <ul>
+                        <li>Cáscaras de fruta y verdura</li>
+                        <li>Restos de comida</li>
+                        <li>Café, té y cáscara de huevo</li>
+                    </ul>
+                </article>
 
-                <div class="days-grid" id="daysGrid">
-                    <!-- Dynamic rendering via JS -->
-                </div>
+                <article class="combo-bin-card" style="--bin-accent: var(--paper-color);">
+                    <div class="combo-bin-icon">📄</div>
+                    <h3>Papel y cartón</h3>
+                    <div class="combo-bin-tag">Contenedor azul</div>
+                    <p>Materiales limpios y secos ideales para reciclar.</p>
+                    <ul>
+                        <li>Hojas, cuadernos y periódico</li>
+                        <li>Cajas de cartón aplastadas</li>
+                        <li>Revistas y sobres</li>
+                    </ul>
+                </article>
 
-                <div class="schedule-tips">
-                    <div class="tip-item">
-                        <div class="tip-icon">⏰</div>
-                        <div>
-                            <strong>Horario sugerido</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Saca tus bolsas entre 30 y 60 minutos antes de la ruta habitual.</p>
-                        </div>
-                    </div>
-                    <div class="tip-item">
-                        <div class="tip-icon">🐈</div>
-                        <div>
-                            <strong>Evita la fauna nociva</strong>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);">Mantén tus botes bien cerrados para evitar que los animales rompan bolsas.</p>
-                        </div>
-                    </div>
-                </div>
+                <article class="combo-bin-card" style="--bin-accent: var(--plastic-color);">
+                    <div class="combo-bin-icon">🥤</div>
+                    <h3>Plástico, vidrio y metal</h3>
+                    <div class="combo-bin-tag">Contenedor amarillo</div>
+                    <p>Enjuaga los envases antes de tirarlos.</p>
+                    <ul>
+                        <li>Botellas PET y latas</li>
+                        <li>Frascos y botellas de vidrio</li>
+                        <li>Envases de aluminio</li>
+                    </ul>
+                </article>
+
+                <article class="combo-bin-card" style="--bin-accent: #607d8b;">
+                    <div class="combo-bin-icon">🗑️</div>
+                    <h3>No reciclables</h3>
+                    <div class="combo-bin-tag">Contenedor gris</div>
+                    <p>Materiales que no se pueden reutilizar ni reciclar.</p>
+                    <ul>
+                        <li>Papel sanitario y pañales</li>
+                        <li>Unicel y colillas</li>
+                        <li>Envolturas sucias</li>
+                    </ul>
+                </article>
+
+                <article class="combo-bin-card" style="--bin-accent: var(--hazard-color);">
+                    <div class="combo-bin-icon">⚠️</div>
+                    <h3>Peligrosos</h3>
+                    <div class="combo-bin-tag">Punto limpio / rojo</div>
+                    <p>No van a la basura común, requieren manejo especial.</p>
+                    <ul>
+                        <li>Pilas y baterías</li>
+                        <li>Medicamentos caducados</li>
+                        <li>Aceite, pintura y focos</li>
+                    </ul>
+                </article>
             </div>
+        </div>
+    </section>
+
+    <section id="recoleccion" class="section-padding" style="background: #eef5f0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Flujo de residuos</span>
+                <h2 class="section-title">¿Qué pasa después de sacar la bolsa?</h2>
+                <p class="section-desc">Cada gesto en casa marca la diferencia en el destino final de lo que tiramos.</p>
+            </div>
+
+            <ol class="steps-list" style="counter-reset: step;">
+                <li>
+                    <h3>Separación en casa</h3>
+                    <p>Clasificas los residuos en bolsas o contenedores distintos según su tipo para evitar contaminación cruzada.</p>
+                </li>
+                <li>
+                    <h3>Recolección</h3>
+                    <p>El camión recoge los materiales en los días establecidos por la zona y los transporta hacia puntos de acopio.</p>
+                </li>
+                <li>
+                    <h3>Transferencia</h3>
+                    <p>Los residuos se agrupan para llevarlos a centros de clasificación, donde se organizan por categoría.</p>
+                </li>
+                <li>
+                    <h3>Reciclaje</h3>
+                    <p>Papel, vidrio, plástico y metal se procesan para convertirlos en nuevos productos y reducir el consumo de materia prima.</p>
+                </li>
+                <li>
+                    <h3>Disposición final</h3>
+                    <p>Lo que no puede reutilizarse se lleva a rellenos sanitarios controlados, minimizando su impacto ambiental.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="juego" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Práctica</span>
+                <h2 class="section-title">Juego: ¿Dónde va?</h2>
+                <p class="section-desc">Pon a prueba tu criterio y cada respuesta te ayuda a mejorar tus hábitos de separación.</p>
+            </div>
+
+            <div class="practice-box">
+                <div class="practice-score">Aciertos: <span id="practiceScore">0</span> de <span id="practiceTotal">0</span></div>
+                <div class="practice-question" id="practiceQuestion">Cáscara de plátano</div>
+                <div class="practice-answers" id="practiceAnswers"></div>
+                <div class="practice-result" id="practiceResult" aria-live="polite"></div>
+                <button class="practice-next" id="practiceNext" type="button">Siguiente objeto</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="consejos" class="section-padding" style="background: #eef5f0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Acciones simples</span>
+                <h2 class="section-title">Qué puedes hacer desde hoy</h2>
+                <p class="section-desc">Pequeños cambios en tu rutina diaria pueden generar un impacto grande a largo plazo.</p>
+            </div>
+
+            <ul class="tips-list">
+                <li>
+                    <strong>Enjuaga los envases</strong>
+                    <span>Un vidrio o tapa sucio puede contaminar todo el material reciclable.</span>
+                </li>
+                <li>
+                    <strong>Aplasta cajas y botellas</strong>
+                    <span>Ahorras espacio y facilitas la recolección y el transporte.</span>
+                </li>
+                <li>
+                    <strong>Haz composta</strong>
+                    <span>Los restos de comida pueden convertirse en abono para plantas y jardines.</span>
+                </li>
+                <li>
+                    <strong>Reduce y reutiliza</strong>
+                    <span>La mejor basura es la que no se genera: usa bolsas y botellas reutilizables.</span>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -1054,7 +1394,8 @@
                 <div>
                     <h4 class="footer-title">Secciones</h4>
                     <ul class="footer-links">
-                        <li><a href="#rutas">Rutas de Recolección</a></li>
+                        <li><a href="#contenedores">Contenedores</a></li>
+                        <li><a href="#recoleccion">Recolección</a></li>
                         <li><a href="#separacion">Guía de Separación</a></li>
                         <li><a href="#impacto">Impacto Ecológico</a></li>
                         <li><a href="#trivia">Trivia Interactiva</a></li>
@@ -1081,57 +1422,83 @@
     </footer>
 
     <script>
-        // --- 1. Collection Routes & Schedule Data ---
-        const zoneData = {
-            centro: [
-                { day: "Lunes", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Martes", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Miércoles", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Jueves", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Viernes", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Sábado", type: "Resto / General 🗑️", class: "type-rest" },
-                { day: "Domingo", type: "Sin servicio ❌", class: "type-rest" }
-            ],
-            norte: [
-                { day: "Lunes", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Martes", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Miércoles", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Jueves", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Viernes", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Sábado", type: "Resto / General 🗑️", class: "type-rest" },
-                { day: "Domingo", type: "Sin servicio ❌", class: "type-rest" }
-            ],
-            sur: [
-                { day: "Lunes", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Martes", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Miércoles", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Jueves", type: "Orgánicos 🍎", class: "type-org" },
-                { day: "Viernes", type: "Reciclables 🥤", class: "type-rec" },
-                { day: "Sábado", type: "Especiales 🔋", class: "type-rec" },
-                { day: "Domingo", type: "Sin servicio ❌", class: "type-rest" }
-            ]
+        // --- 1. Practice waste sorting game ---
+        const practiceItems = [
+            { item: 'Cáscara de plátano', correct: 'Orgánicos' },
+            { item: 'Botella de refresco', correct: 'Envases y Plásticos' },
+            { item: 'Caja de cartón', correct: 'Papel y Cartón' },
+            { item: 'Pila de control remoto', correct: 'Especiales / Peligrosos' },
+            { item: 'Pañal usado', correct: 'No reciclables' },
+            { item: 'Frasco de vidrio', correct: 'Vidrio' },
+            { item: 'Medicamento vencido', correct: 'Especiales / Peligrosos' },
+            { item: 'Periódico viejo', correct: 'Papel y Cartón' }
+        ];
+
+        const practiceCategories = {
+            'Orgánicos': 'Orgánicos',
+            'Envases y Plásticos': 'Envases y Plásticos',
+            'Papel y Cartón': 'Papel y Cartón',
+            'Vidrio': 'Vidrio',
+            'Especiales / Peligrosos': 'Especiales / Peligrosos',
+            'No reciclables': 'No reciclables'
         };
 
-        function setZone(zone) {
-            document.querySelectorAll('.route-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        let practiceIndex = 0;
+        let practiceScore = 0;
+        let practiceTotal = 0;
 
-            const grid = document.getElementById('daysGrid');
-            grid.innerHTML = '';
+        function renderPracticeItem() {
+            const item = practiceItems[practiceIndex];
+            const question = document.getElementById('practiceQuestion');
+            const answers = document.getElementById('practiceAnswers');
+            const result = document.getElementById('practiceResult');
+            const next = document.getElementById('practiceNext');
 
-            zoneData[zone].forEach(item => {
-                const dayCard = document.createElement('div');
-                dayCard.className = 'day-card';
-                dayCard.innerHTML = `
-                    <div class="day-name">${item.day}</div>
-                    <span class="day-type ${item.class}">${item.type}</span>
-                `;
-                grid.appendChild(dayCard);
+            question.textContent = item.item;
+            answers.innerHTML = '';
+            result.textContent = '';
+            result.className = 'practice-result';
+            next.style.display = 'none';
+
+            Object.keys(practiceCategories).forEach(category => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'practice-btn';
+                btn.textContent = category;
+                btn.addEventListener('click', () => checkPracticeAnswer(category));
+                answers.appendChild(btn);
             });
         }
 
-        // Initialize default zone
-        setZone('centro');
+        function checkPracticeAnswer(selected) {
+            const item = practiceItems[practiceIndex];
+            const result = document.getElementById('practiceResult');
+            const buttons = document.querySelectorAll('.practice-btn');
+            const next = document.getElementById('practiceNext');
+
+            buttons.forEach(btn => btn.disabled = true);
+            practiceTotal += 1;
+            document.getElementById('practiceTotal').textContent = practiceTotal;
+
+            if (selected === item.correct) {
+                practiceScore += 1;
+                document.getElementById('practiceScore').textContent = practiceScore;
+                result.textContent = `✅ Correcto: ${item.item} va en ${item.correct}.`;
+                result.className = 'practice-result ok';
+            } else {
+                result.textContent = `❌ No, ${item.item} va en ${item.correct}.`;
+                result.className = 'practice-result bad';
+            }
+
+            next.style.display = 'inline-block';
+        }
+
+        document.getElementById('practiceNext').addEventListener('click', () => {
+            practiceIndex = (practiceIndex + 1) % practiceItems.length;
+            renderPracticeItem();
+        });
+
+        renderPracticeItem();
 
         // --- 2. Live Waste Item Search Filter ---
         function filterWasteItems() {
